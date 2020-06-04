@@ -1,4 +1,4 @@
-Star[] stars = new Star[100];
+Star[] stars = new Star[400];
 
 void setup() {
   size(400, 400);
@@ -11,6 +11,7 @@ void setup() {
 void draw()
 {
   background(0);
+  translate(width/2,height/2);
   for(int i = 0; i < stars.length; i ++)
   {
     stars[i].update();

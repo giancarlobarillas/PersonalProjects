@@ -4,20 +4,23 @@ class Star {
   float z;
 
   Star () {
-    x = random(0, width);
-    y= random(0, height);
-    z= random(0, height);
+    x = random(-width, width);
+    y = random(-height, height);
+    z = width;
   }
-  
+
   void update()
   {
-      
+    z=z-1;
   }
-  
+
   void show()
   {
-      fill(255);
-      noStroke();
-      ellipse(x,y,8,8);
+    fill(255);
+    noStroke();
+    float sx = map(x/z,0,1,0,width);
+    float sy = map(y/z,0,1,0,height);
+    
+    ellipse(sx, sy, 8, 8);
   }
 }

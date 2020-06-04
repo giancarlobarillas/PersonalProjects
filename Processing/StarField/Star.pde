@@ -6,12 +6,18 @@ class Star {
   Star () {
     x = random(-width, width);
     y = random(-height, height);
-    z = width;
+    z = random(width);
   }
 
   void update()
   {
     z=z-1;
+    if(z<1)
+    {
+        z = width;
+        x = random(-width, width);
+        y = random(-height, height);
+    }
   }
 
   void show()
